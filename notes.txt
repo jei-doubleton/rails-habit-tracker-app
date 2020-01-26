@@ -1,0 +1,35 @@
+Habit Tracker
+    MODELS
+        - User
+            Assocations
+                - has_many :habits, through: :user_habits
+            Attributes
+                - name
+                - password_digest
+        - Habit
+            Associations
+                - has_many :users, through: :user_habits
+            Attributes
+                - name
+        - User_Habits
+            Assocations
+                - belongs_to :user
+                - belongs_to :habit
+            Attributes
+                - user_id
+                - habit_id
+                - frequency
+                - status
+                - notes
+
+    FLOW
+        - User signup
+        - User login
+        - User creates habit (or chooses pre-existing habit) 
+            - find_or_create_by habit.name
+                drop-down list of existing habits with other option
+            - User defines habit parameters (nested form - user_habit w/in habit)
+            - create user_habit 
+        - User marks habits complete
+            - display form 
+        - User_habits reset to incomplete daily or weekly
