@@ -5,7 +5,7 @@ Habit Tracker
                 - has_many :habits, through: :user_habits
             Attributes
                 - name
-                - password_digest
+                - password_digest 
         - Habit
             Associations
                 - has_many :users, through: :user_habits
