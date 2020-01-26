@@ -23,7 +23,7 @@ Habit Tracker
                 - frequency
                 - status
                 - notes
-
+    
     FLOW
         - User signup
         - User login
@@ -35,3 +35,18 @@ Habit Tracker
         - User marks habits complete
             - display form 
         - User_habits reset to incomplete daily or weekly
+
+
+    ToDo:
+        [] add has_secure_password/bcrypt
+        [] create user signup flow 
+            [] draw routes
+            [] create user form
+            [] make sure validation working
+        [] create user login flow
+            [] make sure authentication working
+        [] create new habit form
+            [] validations
+            [] create habit form (find or create by)
+            [] user_habit form nested within habit form
+            [] upon create, user redirected to list of user's habits (user.id/habits)
