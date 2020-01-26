@@ -55,3 +55,27 @@ Migrating to CreateUserHabits (20200126175632)
   ↳ /Users/jennifersingleton/.rvm/gems/ruby-2.6.1/bin/rake:23
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/jennifersingleton/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "jeilani"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.9ms)[0m  [1m[32mINSERT INTO "habits" ("name") VALUES (?)[0m  [["name", "coding"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.2ms)[0m  [1m[34mSELECT  "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserHabits Create (0.9ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id") VALUES (?, ?)[0m  [["user_id", 1], ["habit_id", 1]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "jeilani"]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mHabit Load (0.7ms)[0m  [1m[34mSELECT  "habits".* FROM "habits" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT  "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.6ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id") VALUES (?, ?)[0m  [["user_id", 2], ["habit_id", 1]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUserHabit Load (0.4ms)[0m  [1m[34mSELECT  "user_habits".* FROM "user_habits" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mHabit Load (0.3ms)[0m  [1m[34mSELECT  "habits".* FROM "habits" INNER JOIN "user_habits" ON "habits"."id" = "user_habits"."habit_id" WHERE "user_habits"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 11]]
+  [1m[36mHabit Load (0.3ms)[0m  [1m[34mSELECT  "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "user_habits" ON "users"."id" = "user_habits"."user_id" WHERE "user_habits"."habit_id" = ? LIMIT ?[0m  [["habit_id", 1], ["LIMIT", 11]]
