@@ -1,8 +1,20 @@
 <h2>Signup Here!</h2>
 
-<% if flash[:errors] %>
-    <% flash[:errors].each do |msg| %>
+<% if flash[:name_errors] %>
+    <% flash[:name_errors].each do |msg| %>
         <p style="color:red"><%= msg %></p>
+    <% end %>
+<% end %>
+
+<% if flash[:password_errors] %>
+    <% flash[:password_errors].each do |msg| %>
+        <p style="color:red">Password <%= msg %>!</p>
+    <% end %>
+<% end %>
+
+<% if flash[:password_confirmation_errors] %>
+    <% flash[:password_confirmation_errors].each do |msg| %>
+        <p style="color:red">"Confirm password" <%= msg %>!</p>
     <% end %>
 <% end %>
 

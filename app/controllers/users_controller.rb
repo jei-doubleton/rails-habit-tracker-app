@@ -5,7 +5,9 @@ class UsersController < ApplicationController
 
     def create
         @user = User.create(user_params)
-        flash[:errors] = @user.errors.full_messages
+        flash[:name_errors] = @user.errors[:name]
+        flash[:password_errors] = @user.errors[:password]
+        flash[:password_confirmation_errors] = @user.errors[:password_confirmation]
         return redirect_to '/signup' unless @user.save
         
         session[:user_id] = @user.id 
