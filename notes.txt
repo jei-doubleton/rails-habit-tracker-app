@@ -38,7 +38,7 @@ Habit Tracker
 
 
     ToDo:
-        [] add has_secure_password/bcrypt
+        [x] add has_secure_password/bcrypt
         [] create user signup flow 
             [] draw routes
             [] create user form
