@@ -1,4 +1,10 @@
 <h2>Signup Here!</h2>
+
+<% if flash[:notice] %>
+    <h3>We couldn't create your account because: </h3>
+    <%= flash[:notice] %>
+<% end %>
+
 <%= form_for :user, url:'signup' do |f| %>
     <p><%= f.label :name, "Your username:" %>
     <%= f.text_field :name %></p>

@@ -431,3 +431,72 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/signup" for ::1 at 2020-02-04 21:39:43 -0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jennifersingleton/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <h2>Signup Here!</h2>
+    2: 
+    3: <% if @user.errors.any? %>
+    4:     <h3>We couldn't create your account because: </h3>
+    5:     <ul><% @user.errors.messages.each do |msg| %>
+    6:         <li><%= msg %></li>
+  
+app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__313319361821951847_70257665709300'
+Started GET "/signup" for ::1 at 2020-02-04 21:40:39 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <h2>Signup Here!</h2>
+    2: 
+    3: <% if @user.errors.any? %>
+    4:     <h3>We couldn't create your account because: </h3>
+    5:     <ul><% @user.errors.messages.each do |msg| %>
+    6:         <li><%= msg %></li>
+  
+app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__313319361821951847_70257665836920'
+Started GET "/signup" for ::1 at 2020-02-04 21:44:33 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 342ms (Views: 340.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signup" for ::1 at 2020-02-04 21:44:39 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SEcEgqucjVLx8bkUXsN75cshPzuj40lMWSzTETvVbLmddZKcqkqGtfv2npf/AlquPtpBWYX/gxpCf4wXyKoRcA==", "user"=>{"name"=>"Mickey", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Mickey"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Mickey"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9
+Redirected to http://localhost:3000/signup
+Completed 302 Found in 370ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/signup" for ::1 at 2020-02-04 21:44:40 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
