@@ -39,10 +39,10 @@ Habit Tracker
 
     ToDo:
         [x] add has_secure_password/bcrypt
-        [] create user signup flow 
-            [] draw routes
-            [] create user form
-            [] make sure validation working
+        [x] create user signup flow 
+            [x] draw routes
+            [x] create user form
+            [x] make sure validation working
         [] create user login flow
             [] make sure authentication working
         [] create new habit form
