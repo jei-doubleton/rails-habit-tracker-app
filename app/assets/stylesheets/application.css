@@ -14,8 +14,11 @@
  *= require_self
  */
 
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
  body {
-    background-color: lightblue;
+    background-color: rgb(221, 243, 248);
   }
 
   .error_message {

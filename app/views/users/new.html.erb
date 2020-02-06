@@ -25,11 +25,19 @@
 <% end %>
 
 <%= form_for @user, url:'signup' do |f| %>
-    <p><%= f.label :name, "Your username:" %>
-    <%= f.text_field :name %></p>
-    <p><%= f.label :password, "Password:" %>
-    <%= f.password_field :password %></p>
-    <p><%= f. label :password_confirmation, "Confirm password:" %>
-    <%= f.password_field :password_confirmation %></p>
-    <%= f.submit "Submit" %>
+    <div>
+        <%= f.label :name, "Your username:" %>
+        <%= f.text_field :name %>
+    </div>
+    <div>
+        <%= f.label :password, "Password:" %>
+        <%= f.password_field :password %>
+    </div>
+    <div>
+        <%= f. label :password_confirmation, "Confirm password:" %>
+        <%= f.password_field :password_confirmation %>
+    </div>
+    <div>
+        <%= f.submit "Submit" %>
+    </div>
 <% end %>
