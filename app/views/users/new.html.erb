@@ -1,29 +1,35 @@
 <h2>Signup Here!</h2>
 
 <% if flash[:name_errors] %>
-    <% flash[:name_errors].each do |msg| %>
-        <p style="color:red"><%= msg %></p>
-    <% end %>
+    <div class="error_message">
+        <% flash[:name_errors].each do |msg| %>
+            <p><%= msg %></p>
+        <% end %>
+    </div>
 <% end %>
 
 <% if flash[:password_errors] %>
-    <% flash[:password_errors].each do |msg| %>
-        <p style="color:red">Password <%= msg %>!</p>
-    <% end %>
+    <div class="error_message">
+        <% flash[:password_errors].each do |msg| %>
+            <p>Password <%= msg %>!</p>
+        <% end %>
+    </div>
 <% end %>
 
 <% if flash[:password_confirmation_errors] %>
-    <% flash[:password_confirmation_errors].each do |msg| %>
-        <p style="color:red">"Confirm password" <%= msg %>!</p>
-    <% end %>
+    <div class="error_message">
+        <% flash[:password_confirmation_errors].each do |msg| %>
+            <p>"Confirm password" <%= msg %>!</p>
+        <% end %>
+    </div>
 <% end %>
 
-<%= form_for :user, url:'signup' do |f| %>
+<%= form_for @user, url:'signup' do |f| %>
     <p><%= f.label :name, "Your username:" %>
     <%= f.text_field :name %></p>
-    <p><%= f.label :password %>
+    <p><%= f.label :password, "Password:" %>
     <%= f.password_field :password %></p>
-    <p><%= f. label :password_confirmation, "Confirm password" %>
+    <p><%= f. label :password_confirmation, "Confirm password:" %>
     <%= f.password_field :password_confirmation %></p>
     <%= f.submit "Submit" %>
 <% end %>
