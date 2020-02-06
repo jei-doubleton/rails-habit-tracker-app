@@ -43,10 +43,19 @@ Habit Tracker
             [x] draw routes
             [x] create user form
             [x] make sure validation working
-        [] create user login flow
-            [] make sure authentication working
-        [] create new habit form
+        [x] create user login flow
+            [x] make sure authentication working
+            [x] user logout flow
+        [] create new user_habit form
             [] validations
-            [] create habit form (find or create by)
-            [] user_habit form nested within habit form
+            [] choose from existing habits or create a new habit
+                [] habit form nested within user_habit form
+            [] frequency, notes
+            [] status is hidden field that defaults to incomplete?
+            [] automatically associates with user
             [] upon create, user redirected to list of user's habits (user.id/habits)
+        [] create user show page 
+            [] shows list of user's habits
+            [] lets user mark habit as complete
+            [] link to create new habit 
+            [] checks that user is logged in before showing page
