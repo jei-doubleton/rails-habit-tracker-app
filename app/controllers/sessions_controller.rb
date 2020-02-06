@@ -5,10 +5,10 @@ class SessionsController < ApplicationController
     end
 
     def create
-        user = User.find_by(id: params[:user][:name])
+        user = User.find_by(name: params[:user][:name])
         user.authenticate(params[:password])
         session[:user_id] = user.id
-        redirect_to 'welcome#index'
+        redirect_to "/"
     end
     
     private
