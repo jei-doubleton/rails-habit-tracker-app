@@ -10,6 +10,10 @@
   </head>
 
   <body>
+  <h1>Habit Tracker</h1>
+  <div class="navbar">
+    <p><%= link_to "Home", '/' %> | <%= link_to "Signup", '/signup' %> | <%= link_to "Login", '/login' %> | <%= link_to "Logout", '/logout' %>
+  </div>
     <%= yield %>
   </body>
 </html>
