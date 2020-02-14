@@ -1,0 +1,4 @@
+<h3>Welcome <%= @user.name %>!</h3>
+<p>These are your habits:</p>
+
+<p>You haven't set up any habits. <%= link_to "Create some now!", new_user_my_habit_path(@user) %></p>
