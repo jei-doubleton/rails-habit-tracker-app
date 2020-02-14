@@ -3793,3 +3793,22 @@ puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
 puma (3.12.2) lib/puma/server.rb:476:in `process_client'
 puma (3.12.2) lib/puma/server.rb:334:in `block in run'
 puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jennifersingleton/.rvm/gems/ruby-2.6.1/bin/rake:23
+Migrating to ChangeUserHabitsToMyHabits (20200214020346)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/jennifersingleton/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (4.2ms)[0m  [1m[35mALTER TABLE "user_habits" RENAME TO "my_habits"[0m
+  ↳ db/migrate/20200214020346_change_user_habits_to_my_habits.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200214020346"]]
+  ↳ /Users/jennifersingleton/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/jennifersingleton/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/jennifersingleton/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/jennifersingleton/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/jennifersingleton/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jennifersingleton/.rvm/gems/ruby-2.6.1/bin/rake:23
