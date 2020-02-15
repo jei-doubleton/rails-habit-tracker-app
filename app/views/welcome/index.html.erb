@@ -1,1 +1,10 @@
-Yo, this is the Habit Tracker App
+<div class="main-content">
+    <h3>Ready to track some habits?</h3>
+    <% if logged_in? %>
+        <p>Update your progress: <%= link_to "#{@user.name}'s Habit Tracker", user_path(@user) %></p>
+        <p>Create some <%= link_to "new habits!", new_user_my_habit_path(@user) %></p>
+    <% else %>
+        <p><%= link_to "Sign up", '/signup' %></p>
+        <p><%= link_to "Login", '/login' %></p>
+    <% end %>
+</div>

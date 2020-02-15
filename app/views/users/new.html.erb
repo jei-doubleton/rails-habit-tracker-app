@@ -1,43 +1,45 @@
-<h2>Signup Here!</h2>
-
-<% if flash[:name_errors] %>
-    <div class="error_message">
-        <% flash[:name_errors].each do |msg| %>
-            <p><%= msg %></p>
-        <% end %>
-    </div>
-<% end %>
-
-<% if flash[:password_errors] %>
-    <div class="error_message">
-        <% flash[:password_errors].each do |msg| %>
-            <p>Password <%= msg %>!</p>
-        <% end %>
-    </div>
-<% end %>
-
-<% if flash[:password_confirmation_errors] %>
-    <div class="error_message">
-        <% flash[:password_confirmation_errors].each do |msg| %>
-            <p>"Confirm password" <%= msg %>!</p>
-        <% end %>
-    </div>
-<% end %>
-
-<%= form_for @user, url:'signup' do |f| %>
-    <div>
-        <%= f.label :name, "Your username:" %>
-        <%= f.text_field :name %>
-    </div>
-    <div>
-        <%= f.label :password, "Password:" %>
-        <%= f.password_field :password %>
-    </div>
-    <div>
-        <%= f. label :password_confirmation, "Confirm password:" %>
-        <%= f.password_field :password_confirmation %>
-    </div>
-    <div>
-        <%= f.submit "Submit" %>
-    </div>
-<% end %>
+<div class="main-content">
+    <h2>Signup Here!</h2>
+    
+    <% if flash[:name_errors] %>
+        <div class="error_message">
+            <% flash[:name_errors].each do |msg| %>
+                <p><%= msg %></p>
+            <% end %>
+        </div>
+    <% end %>
+    
+    <% if flash[:password_errors] %>
+        <div class="error_message">
+            <% flash[:password_errors].each do |msg| %>
+                <p>Password <%= msg %>!</p>
+            <% end %>
+        </div>
+    <% end %>
+    
+    <% if flash[:password_confirmation_errors] %>
+        <div class="error_message">
+            <% flash[:password_confirmation_errors].each do |msg| %>
+                <p>"Confirm password" <%= msg %>!</p>
+            <% end %>
+        </div>
+    <% end %>
+    
+    <%= form_for @user, url:'signup' do |f| %>
+        <div>
+            <%= f.label :name, "Your username:" %>
+            <%= f.text_field :name %>
+        </div>
+        <div>
+            <%= f.label :password, "Password:" %>
+            <%= f.password_field :password %>
+        </div>
+        <div>
+            <%= f. label :password_confirmation, "Confirm password:" %>
+            <%= f.password_field :password_confirmation %>
+        </div>
+        <div>
+            <%= f.submit "Submit" %>
+        </div>
+    <% end %>
+</div>
