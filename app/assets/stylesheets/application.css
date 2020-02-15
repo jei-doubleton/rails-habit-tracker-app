@@ -46,6 +46,14 @@
     color: lightskyblue;
   }
 
+  .main-content {
+    margin: auto;
+    margin-top: 20px;
+    width: 60%;
+    padding: 30px;
+    background: whitesmoke;
+  }
+
   .error_message {
       color: red;
       font-weight: bold;
