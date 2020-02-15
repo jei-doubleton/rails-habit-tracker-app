@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsHabitTrackerApp</title>
+    <title>Track Your Habits!</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,9 +10,16 @@
   </head>
 
   <body>
-  <h1>Habit Tracker</h1>
+  <div class="title"<h1>Your Habit Tracker</h1></div>
   <div class="navbar">
-    <p><%= link_to "Home", '/' %> | <%= link_to "Signup", '/signup' %> | <%= link_to "Login", '/login' %> | <%= link_to "Logout", '/logout' %>
+    | <%= link_to "Home", '/' %> | 
+    <% if logged_in? %>
+      <%= link_to "My Profile", user_path(current_user) %> | 
+      <%= link_to "Logout", '/logout' %>
+    <% else %>
+      <%= link_to "Signup", '/signup' %> | 
+      <%= link_to "Login", '/login' %> | 
+    <% end %>
   </div>
     <%= yield %>
   </body>

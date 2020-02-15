@@ -16,9 +16,34 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
-
+ 
  body {
-    background-color: rgb(221, 243, 248);
+  background-image: url("gray-box-background.jpg");
+}
+
+  .title {
+    background: darkblue;
+    padding: 20px;
+    color: whitesmoke;
+    font-size: 60px;
+    text-align: center;
+  }
+
+  .navbar {
+    padding: 20px;
+    text-align: center;
+    background: darkblue;
+    color: whitesmoke;
+    font-size: 25px;
+  }
+
+  .navbar a {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+
+  .navbar a:hover {
+    color: lightskyblue;
   }
 
   .error_message {
