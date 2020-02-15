@@ -8,11 +8,11 @@ class SessionsController < ApplicationController
         user = User.find_by(name: params[:user][:name])
         user.authenticate(params[:password])
         session[:user_id] = user.id
-        redirect_to '/'
+        redirect_to "/users/#{user.id}"
     end
 
     def destroy
-        session.delete :user_id
+        reset_session
         redirect_to '/'
     end
     
