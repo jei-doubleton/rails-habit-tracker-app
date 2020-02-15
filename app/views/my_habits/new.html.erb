@@ -1,3 +1,21 @@
 <div class="main-content">
     <h2>Create a new habit!</h2>
+
+    # t.integer "user_id" 
+        # from current_user
+        # don't need to put in form
+    # t.integer "habit_id" 
+        # list of existing habits
+        # or create a new one
+        # find_or_create_by in controller?
+    # t.string "frequency" 
+        # predefined options
+            # daily
+            # weekly
+            # monthly
+    # t.boolean "status"
+        # hidden field in form
+        # default to false
+    # t.text "notes"
+        # text field
 </div>
