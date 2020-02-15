@@ -45,7 +45,7 @@ Habit Tracker
             [x] make sure validation working
         [x] create user login flow
             [x] make sure authentication working
-            [x] user logout flow - reset_session!
+            [x] user logout flow - reset_session
             [] if user is already logged in, add message on login screen
         [] put current_user and login methods in ApplicationController under private
             [] def login(user)
