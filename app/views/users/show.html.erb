@@ -2,6 +2,11 @@
 
 <% if @user.my_habits %>
     <p>These are your habits:</p>
+    <ol>
+        <% @user.my_habits.each do |habit| %>
+            <li><%= habit.name %></li>
+        <% end %>
+    </ol>
 <% else %>
     <p>You haven't set up any habits. <%= link_to "Create some now!", new_user_my_habit_path(@user) %></p>
 <% end %>
