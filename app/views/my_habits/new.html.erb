@@ -2,10 +2,40 @@
     <h2>Create a new habit!</h2>
 
     <%= form_for :my_habit do |f| %>
-        <%= f.label :habit_id, "Select a predefined habit: " %>
-        <%= f.collection_select :habit_id, Habit.all, :id, :name, prompt: "Select or create a new habit" %>
-        <%= f.label :habit_id[:name], "or add your own: " %>
-        <%= f.text :habit_id[:name] %>
+        <div>
+            <%= f.label :habit_id, "Select a predefined habit: " %>
+            <%= f.collection_select :habit_id, Habit.all, :id, :name, prompt: "Select a habit" %>
+        </div><br>
+
+        <div>
+            <!-- Does habits need to be singular? -->
+            <%= f.fields_for :habit do |habit| %>
+                <%= habit.label :name, "or add your own: " %>
+                <%= habit.text_field :name %>
+            <% end %>
+        </div><br>
+
+        <div>
+            How often will you do this habit?<br>
+            <%= f.radio_button :frequency, "daily" %>
+            <%= f.label :frequency_daily, "Daily" %><br>
+            <%= f.radio_button :frequency, "weekly" %>
+            <%= f.label :frequency_weekly, "Weekly" %><br>
+            <%= f.radio_button :frequency, "monthly" %>
+            <%= f.label :frequency_monthly, "Monthly" %>
+        </div><br>
+
+        <div>
+            <%= f.label :notes, "Add any details or other notes for yourself about the habit:" %>
+            <%= f.text_area :notes %>
+        </div><br>
+
+        <%= f.hidden_field :status, value: false %>
+        
+        <%= f.submit "Create your habit!" %>
+
+        <!-- t.boolean "status" -->
+
     <% end %>
  
 </div>
