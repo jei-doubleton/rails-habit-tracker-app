@@ -1,21 +1,11 @@
 <div class="main-content">
     <h2>Create a new habit!</h2>
 
-    # t.integer "user_id" 
-        # from current_user
-        # don't need to put in form
-    # t.integer "habit_id" 
-        # list of existing habits
-        # or create a new one
-        # find_or_create_by in controller?
-    # t.string "frequency" 
-        # predefined options
-            # daily
-            # weekly
-            # monthly
-    # t.boolean "status"
-        # hidden field in form
-        # default to false
-    # t.text "notes"
-        # text field
+    <%= form_for :my_habit do |f| %>
+        <%= f.label :habit_id, "Select a predefined habit: " %>
+        <%= f.collection_select :habit_id, Habit.all, :id, :name, prompt: "Select or create a new habit" %>
+        <%= f.label :habit_id[:name], "or add your own: " %>
+        <%= f.text :habit_id[:name] %>
+    <% end %>
+ 
 </div>
