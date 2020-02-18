@@ -5,12 +5,13 @@
         
         <div>
             <%= f.label :habit_name, "Choose a habit: " %>
-            <%= f.text_field :habit_name, list: "habits_autocomplete" %>
+            <%= f.text_field :habit_name, list: "habits_autocomplete", include_blank: "start typing" %>
             <datalist id="habits_autocomplete">
-                <% Habit.all.each do |habit| %>
-                    <option value="<%= habit.name %>">
+            <% Habit.all.each do |habit| %>
+                <option value="<%= habit.name %>">
                 <% end %>
-            </datalist>
+                </datalist><br>
+            <em>Start typing to choose an existing habit or create your own.</em>
         </div><br>
 
         <div>
@@ -24,7 +25,7 @@
         </div><br>
 
         <div>
-            <%= f.label :notes, "Add any details or other notes for yourself about the habit:" %>
+            <%= f.label :notes, "Add any details or other notes for yourself about the habit:" %><br>
             <%= f.text_area :notes %>
         </div><br>
 
