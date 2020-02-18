@@ -8,10 +8,9 @@
             <%= f.text_field :habit_name, list: "habits_autocomplete" %>
             <datalist id="habits_autocomplete">
                 <% Habit.all.each do |habit| %>
-                    <option value="<%= habit.name %>"
+                    <option value="<%= habit.name %>">
                 <% end %>
             </datalist>
-            <textarea name="post[content]"></textarea>
         </div><br>
 
         <div>

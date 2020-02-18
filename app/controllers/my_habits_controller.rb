@@ -9,7 +9,12 @@ class MyHabitsController < ApplicationController
     def create
         @my_habit = MyHabit.new(my_habit_params)
         @my_habit.user_id = current_user.id
-        raise @my_habit.inspect
+
+        if @my_habit.save 
+            redirect_to user_path(current_user) 
+        else
+             raise @my_habit.inspect
+        end
     end
 
     private
