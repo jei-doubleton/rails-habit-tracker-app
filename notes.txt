@@ -49,13 +49,15 @@ Habit Tracker
             [x] if user is already logged in, add message on login screen
         [x] put current_user and login methods in ApplicationController under private
         [] create new user_habit form
-            [] validations
-            [] choose from existing habits or create a new habit
-                [] habit form nested within user_habit form
-            [] frequency, notes
-            [] status is hidden field that defaults to incomplete?
+            [x] choose from existing habits or create a new habit
+                [x] habit form nested within user_habit form
+            [x] frequency, notes
+            [x] status is hidden field that defaults to incomplete
+        -----START HERE-----------
+            [] creates new my_habit in controller
             [] automatically associates with user
             [] upon create, user redirected to list of user's habits (user.id/habits)
+            [] validations
         [] create user show page 
             [] shows list of user's habits
             [] lets user mark habit as complete
