@@ -1,18 +1,17 @@
 <div class="main-content">
     <h2>Create a new habit!</h2>
 
-    <%= form_for :my_habit, url: "/users/#{current_user.id}/my_habits" do |f| %>
+    <%= form_for @my_habit, url: "/users/#{current_user.id}/my_habits" do |f| %>
+        
         <div>
-            <%= f.label :habit_id, "Select a predefined habit: " %>
-            <%= f.collection_select :habit_id, Habit.all, :id, :name, prompt: "Select a habit" %>
-        </div><br>
-
-        <div>
-            <!-- Should habits be singular or plural? -->
-            <%= f.fields_for :habit do |habit| %>
-                <%= habit.label :name, "...or add your own: " %>
-                <%= habit.text_field :name %>
-            <% end %>
+            <%= f.label :habit_name, "Choose a habit: " %>
+            <%= f.text_field :habit_name, list: "habits_autocomplete" %>
+            <datalist id="habits_autocomplete">
+                <% Habit.all.each do |habit| %>
+                    <option value="<%= habit.name %>"
+                <% end %>
+            </datalist>
+            <textarea name="post[content]"></textarea>
         </div><br>
 
         <div>
