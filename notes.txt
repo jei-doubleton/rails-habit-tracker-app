@@ -53,13 +53,15 @@ Habit Tracker
                 [x] habit form nested within user_habit form
             [x] frequency, notes
             [x] status is hidden field that defaults to incomplete
-        -----START HERE-----------
-            [] creates new my_habit in controller
-            [] automatically associates with user
-            [] upon create, user redirected to list of user's habits (user.id/habits)
+            [x] creates new my_habit in controller
+            [x] automatically associates with user
+            [x] upon create, user redirected to list of user's habits
             [] validations
+                - validates presence habit_id, frequency
+                - 
         [] create user show page 
-            [] shows list of user's habits
+            [x] shows list of user's habits
             [] lets user mark habit as complete
-            [] link to create new habit 
-            [] checks that user is logged in before showing page
+            [] lets user delete habit
+            [x] link to create new habit 
+            [x] checks that user is logged in before showing page

@@ -13,7 +13,7 @@ class MyHabitsController < ApplicationController
         if @my_habit.save 
             redirect_to user_path(current_user) 
         else
-             raise @my_habit.inspect
+             redirect_to new_user_my_habit_path(current_user)
         end
     end
 

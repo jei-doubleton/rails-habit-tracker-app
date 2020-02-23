@@ -1,6 +1,9 @@
 class MyHabit < ApplicationRecord
     belongs_to :user 
     belongs_to :habit 
+    validates :habit_id, presence: { message: "Whoops, you can't track habits without picking a habit!"}
+    validates :frequency, presence: { message: "Pick how often you want to do this habit."}
+
 
     def name
         self.habit.name

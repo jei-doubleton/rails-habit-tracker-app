@@ -5,7 +5,7 @@
         
         <div>
             <%= f.label :habit_name, "Choose a habit: " %>
-            <%= f.text_field :habit_name, list: "habits_autocomplete", include_blank: "start typing" %>
+            <%= f.text_field :habit_name, list: "habits_autocomplete", include_blank: "start typing", required: true %>
             <datalist id="habits_autocomplete">
             <% Habit.all.each do |habit| %>
                 <option value="<%= habit.name %>">
